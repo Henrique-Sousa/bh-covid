@@ -8,4 +8,5 @@ for f in *.pdf; do
     data=$( head -30 $txt | grep -P '^[0-9]+' | sed 's/\.//g' | tr '\n' , );
     echo $date,$data | sed 's/,$//g' | sed 's/\*//g';
     rm $txt;
+    rm $f;
 done >> covid-bh.csv
